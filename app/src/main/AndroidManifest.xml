@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CalendarioActivity" />
+        <activity android:name=".NotaCalendarioActivity" />
+        <activity android:name=".GerenciarPerfilActivity" />
+        <activity android:name=".EditarNotaActivity" />
+        <activity android:name=".EditarPerfilActivity" />
     </application>
 
 </manifest>
