@@ -1,26 +1,31 @@
-package ifrs.pw3.trabalhowebiii;
+package ifrs.pw3.trabalhowebiii.model;
 
 import java.util.Objects;
 
 public class Pessoa {
-    private Integer id;
+    private Integer _id;
     private String nome;
+    private String senha;
     private String endereco;
     private String telefone;
 
-    public Pessoa(Integer id, String nome, String endereco, String telefone) {
-        this.id = id;
+    public Pessoa() {
+    }
+
+    public Pessoa(Integer _id, String nome, String senha, String endereco, String telefone) {
+        this._id = _id;
         this.nome = nome;
+        this.senha = senha;
         this.endereco = endereco;
         this.telefone = telefone;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer get_id() {
+        return _id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void set_id(Integer _id) {
+        this._id = _id;
     }
 
     public String getNome() {
@@ -29,6 +34,14 @@ public class Pessoa {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getEndereco() {
@@ -48,27 +61,11 @@ public class Pessoa {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pessoa)) return false;
-        Pessoa pessoa = (Pessoa) o;
-        return Objects.equals(getId(), pessoa.getId()) &&
-                Objects.equals(getNome(), pessoa.getNome()) &&
-                Objects.equals(getEndereco(), pessoa.getEndereco()) &&
-                Objects.equals(getTelefone(), pessoa.getTelefone());
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(getId(), getNome(), getEndereco(), getTelefone());
-    }
-
-    @Override
     public String toString() {
         return "Pessoa{" +
-                "id=" + id +
+                "_id=" + _id +
                 ", nome='" + nome + '\'' +
+                ", senha='" + senha + '\'' +
                 ", endereco='" + endereco + '\'' +
                 ", telefone='" + telefone + '\'' +
                 '}';

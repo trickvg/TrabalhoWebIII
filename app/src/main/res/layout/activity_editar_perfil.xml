@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarPerfilActivity">
+    tools:context=".view.EditarPerfilActivity">
 
     <TextView
         android:id="@+id/textView12"
@@ -29,13 +29,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/edicaoNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="76dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="@string/editTextNome"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="@+id/textView12"
         app:layout_constraintStart_toEndOf="@+id/textView12"
@@ -43,12 +43,12 @@
         app:layout_constraintVertical_bias="0.657" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/edicaoSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="72dp"
         android:layout_marginStart="72dp"
         android:ems="10"
+        android:hint="@string/editTextSenha"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="@+id/textView13"
         app:layout_constraintStart_toEndOf="@+id/textView13"
@@ -56,11 +56,11 @@
         app:layout_constraintVertical_bias="0.592" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/botaoSalvarPerfil"
         android:layout_width="264dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Salvar"
+        android:text="@string/btnSavePrfl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

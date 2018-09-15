@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TrabalhoWebIII</string>
+
+    <string name="btnSavePrfl">Salvar</string>
+    <string name="editTextNome">Nome</string>
+    <string name="editTextSenha">Senha</string>
 </resources>
