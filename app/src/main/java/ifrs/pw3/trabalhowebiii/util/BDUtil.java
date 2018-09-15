@@ -29,7 +29,7 @@ public class BDUtil extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS NOTA");
         onCreate(db);
     }
-
+//
     public SQLiteDatabase getConexao(){
         return this.getWritableDatabase();
     }
