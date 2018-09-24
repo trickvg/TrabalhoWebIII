@@ -19,7 +19,7 @@ public class BDUtil extends SQLiteOpenHelper {
         criarTabela.append(" CREATE TABLE NOTA (");
         criarTabela.append(" _ID   INTEGER PRIMARY KEY AUTOINCREMENT, ");
         criarTabela.append(" NOME  TEXT    NOT NULL,");
-        criarTabela.append(" SENHA TEXT    NOT NULL,");
+        criarTabela.append(" SENHA TEXT    NOT NULL)");
 //        criarTabela.append(" TELEFONE   TEXT NOT NULL)");
         db.execSQL(criarTabela.toString());
     }

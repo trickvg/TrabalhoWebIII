@@ -12,6 +12,12 @@ public class Pessoa {
     public Pessoa() {
     }
 
+    public Pessoa(Integer _id, String nome, String senha) {
+        this._id = _id;
+        this.nome = nome;
+        this.senha = senha;
+    }
+
     public Pessoa(Integer _id, String nome, String senha, String endereco, String telefone) {
         this._id = _id;
         this.nome = nome;
