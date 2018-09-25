@@ -16,11 +16,21 @@ public class MenuInicialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_inicial);
 
         Button btnCadastrarUser = findViewById(R.id.btnCadastrarUsuario);
+        Button btnCadastrarNota = findViewById(R.id.btnCadastrarNota);
 
         btnCadastrarUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intencao = new Intent(getApplicationContext(), CadastrarPerfilActivity.class);
+                startActivity(intencao);
+            }
+        });
+
+
+        btnCadastrarNota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intencao = new Intent(getApplicationContext(), CadastrarNotaActivity.class);
                 startActivity(intencao);
             }
         });

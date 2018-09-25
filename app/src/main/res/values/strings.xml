@@ -5,4 +5,14 @@
     <string name="btnUserPrfl">Ver Usuarios</string>
     <string name="editTextNome">Nome</string>
     <string name="editTextSenha">Senha</string>
+
+    <!--strings da tela activity main-->
+    <string name="nomeLogin">Digite seu login</string>
+    <string name="senhaLogin">Digite sua senha</string>
+    <string name="btnLoginEntrar">Entrar</string>
+
+
+    <!--strong s da tela activity cadastrar nota-->
+    <string name="tituloNota">Insira o titulo</string>
+    <string name="descricaoNota">Insira a descrição</string>
 </resources>

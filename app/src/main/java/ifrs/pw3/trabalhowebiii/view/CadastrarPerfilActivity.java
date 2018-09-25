@@ -19,8 +19,11 @@ public class CadastrarPerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastrar_perfil);
 
         Button botao = findViewById(R.id.botaoSalvarPerfil);
-        Button botaoVerUsers = findViewById(R.id.botaoVerUsuarios);
 
+
+
+//        botao apenas para teste , será deletado depois
+        Button botaoVerUsers = findViewById(R.id.botaoVerUsuarios);
         botaoVerUsers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
