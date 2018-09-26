@@ -1,6 +1,7 @@
 package ifrs.pw3.trabalhowebiii.view;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,18 @@ public class MenuInicialActivity extends AppCompatActivity {
 
         Button btnCadastrarUser = findViewById(R.id.btnCadastrarUsuario);
         Button btnCadastrarNota = findViewById(R.id.btnCadastrarNota);
+        Button btnLocalizacaoIFRS = findViewById(R.id.btnLocalizacaoIFRS);
+
+        btnLocalizacaoIFRS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intencao = new Intent(Intent.ACTION_VIEW);
+                intencao.setData(Uri.parse("geo:0,0?q=-30.026221, -51.221203(IFRS POA)?z=15"));
+                if (intencao.resolveActivity(getPackageManager()) != null){
+                    startActivity(intencao);
+                }
+            }
+        });
 
         btnCadastrarUser.setOnClickListener(new View.OnClickListener() {
             @Override

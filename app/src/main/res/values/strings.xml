@@ -12,7 +12,10 @@
     <string name="btnLoginEntrar">Entrar</string>
 
 
-    <!--strong s da tela activity cadastrar nota-->
+    <!--strings da tela activity cadastrar nota-->
     <string name="tituloNota">Insira o titulo</string>
     <string name="descricaoNota">Insira a descrição</string>
+
+    <!--strings tela activity menu inicial-->
+    <string name="btnLocalizacao">Localização IFRS</string>
 </resources>
