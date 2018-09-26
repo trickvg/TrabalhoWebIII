@@ -7,4 +7,4 @@ O Notifyme IFRS é um aplicativo de notificações para o IFRS - Campus Porto Al
 
 
 
-Desenvolvido por Ariel e Patrick
+Desenvolvido por @arielpezzoli e @trickvg
