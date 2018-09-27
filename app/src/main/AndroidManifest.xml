@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.SplashScreenActivity"
+            android:theme="@style/AppCompat.TelaCheia">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".view.CadastrarPerfilActivity" />
         <activity android:name=".view.CadastrarNotaActivity" />
         <activity android:name=".view.CalendarioActivity" />
