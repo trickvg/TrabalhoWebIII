@@ -17,7 +17,7 @@ public class PessoaRepository {
         ContentValues valores = new ContentValues();
         valores.put("NOME", nome);
         valores.put("SENHA", senha);
-        long resultado = bdUtil.getConexao().insert("NOTA", null, valores);
+        long resultado = bdUtil.getConexao().insert("USUARIO", null, valores);
         if (resultado ==-1) {
             bdUtil.close();
             return "Erro ao inserir registro";

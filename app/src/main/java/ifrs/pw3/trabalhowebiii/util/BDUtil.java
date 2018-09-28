@@ -18,15 +18,15 @@ public class BDUtil extends SQLiteOpenHelper {
         StringBuilder criarTabelaUsuario = new StringBuilder();
         StringBuilder criarTabelaNota = new StringBuilder();
 
-        criarTabelaNota.append(" CREATE TABLE NOTA(");
-        criarTabelaNota.append(" _ID_NOTA       INTEGER PRIMARY KEY AUTOINCREMENT, ");
-        criarTabelaNota.append(" TITULO_NOTA    TEXT NOT NULL,");
-        criarTabelaNota.append(" DESCRICAO_NOTA TEXT NOT NULL)");
-
         criarTabelaUsuario.append(" CREATE TABLE USUARIO (");
         criarTabelaUsuario.append(" _ID   INTEGER PRIMARY KEY AUTOINCREMENT, ");
         criarTabelaUsuario.append(" NOME  TEXT    NOT NULL,");
         criarTabelaUsuario.append(" SENHA TEXT    NOT NULL)");
+
+        criarTabelaNota.append(" CREATE TABLE NOTA(");
+        criarTabelaNota.append(" _ID_NOTA       INTEGER PRIMARY KEY AUTOINCREMENT, ");
+        criarTabelaNota.append(" TITULO_NOTA    TEXT NOT NULL,");
+        criarTabelaNota.append(" DESCRICAO_NOTA TEXT NOT NULL)");
 
 
         db.execSQL(criarTabelaUsuario.toString());

@@ -15,6 +15,7 @@
     <!--strings da tela activity cadastrar nota-->
     <string name="tituloNota">Insira o titulo</string>
     <string name="descricaoNota">Insira a descrição</string>
+    <string name="btnSalvarNota">Salvar Nota</string>
 
     <!--strings tela activity menu inicial-->
     <string name="btnLocalizacao">Localização IFRS</string>

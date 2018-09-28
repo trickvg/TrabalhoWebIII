@@ -47,8 +47,6 @@ public class CadastrarPerfilActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "campos obrigatorios", Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
 
 
