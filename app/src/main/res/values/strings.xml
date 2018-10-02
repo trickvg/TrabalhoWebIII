@@ -18,5 +18,17 @@
     <string name="btnSalvarNota">Salvar Nota</string>
 
     <!--strings tela activity menu inicial-->
+    <string name="btnCadastrarUsuario">Cadastrar Usuario</string>
+    <string name="btnEditarNota">Editar Notas</string>
+    <string name="btnCadastrarNota">Cadastrar Notas</string>
     <string name="btnLocalizacao">Localização IFRS</string>
+
+    <!--activity editar nota-->
+    <string name="editTextTituloNota">Editar Titulo</string>
+    <string name="editTextDescricaoNota">Editar Descricao</string>
+    <string name="btnEdicaoNota">Editar Nota</string>
+
+    <!--activity linha-->
+    <string name="excluir">Excluir</string>
+    <string name="editar">Editar</string>
 </resources>

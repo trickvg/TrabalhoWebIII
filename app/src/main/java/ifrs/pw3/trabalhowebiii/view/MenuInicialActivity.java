@@ -19,6 +19,16 @@ public class MenuInicialActivity extends AppCompatActivity {
         Button btnCadastrarUser = findViewById(R.id.btnCadastrarUsuario);
         Button btnCadastrarNota = findViewById(R.id.btnCadastrarNota);
         Button btnLocalizacaoIFRS = findViewById(R.id.btnLocalizacaoIFRS);
+        Button btnEditarNota = findViewById(R.id.btnEditarNota);
+
+        btnEditarNota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intencao = new Intent(getApplicationContext(), ListNotasActivity.class);
+                startActivity(intencao);
+
+            }
+        });
 
         btnLocalizacaoIFRS.setOnClickListener(new View.OnClickListener() {
             @Override
