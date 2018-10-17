@@ -18,7 +18,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
                 mostrarLogin();
             }
-        }, 4000);
+        }, 3000);
 
     }
 
