@@ -5,10 +5,12 @@
     <string name="btnUserPrfl">Ver Usuarios</string>
     <string name="editTextNome">Nome</string>
     <string name="editTextSenha">Senha</string>
+    <string name="editTextEmail">Email</string>
 
     <!--strings da tela activity main-->
     <string name="login_titulo">LOGIN</string>
     <string name="nomeLogin">Digite seu login</string>
+    <string name="emailLogin">Digite seu email</string>
     <string name="senhaLogin">Digite sua senha</string>
     <string name="btnLoginEntrar">Entrar</string>
 

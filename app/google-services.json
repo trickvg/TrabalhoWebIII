@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "199604253736",
+    "firebase_url": "https://trabalhowebiii.firebaseio.com",
+    "project_id": "trabalhowebiii",
+    "storage_bucket": "trabalhowebiii.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199604253736:android:dc6f2c9be910e9cd",
+        "android_client_info": {
+          "package_name": "ifrs.pw3.trabalhowebiii"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199604253736-hh8qkfqcehcubt2ebevrhaaq939prjh2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ifrs.pw3.trabalhowebiii",
+            "certificate_hash": "29885ee5014750973a919505061e725458fc08c5"
+          }
+        },
+        {
+          "client_id": "199604253736-nubu5t4o9drc7snqr761jnt5a6ovgl64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp3icPe4ALEbHUQBE6EdCdPMUPtgMRbqc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199604253736-nubu5t4o9drc7snqr761jnt5a6ovgl64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
