@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ifrs.pw3.trabalhowebiii">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,32 +11,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity">
+
+        <activity
+            android:name=".view.LoginActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-
-        <activity
-            android:name=".view.SplashScreenActivity"
-            android:theme="@style/AppCompat.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.CadastrarPerfilActivity" />
-        <activity android:name=".view.CadastrarNotaActivity" />
+
+        <!-- <activity -->
+        <!-- android:name=".view.SplashScreenActivity" -->
+        <!-- android:theme="@style/AppCompat.Fullscreen"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <!-- <activity android:name=".view.CadastrarPerfilActivity" /> -->
+        <!-- <activity android:name=".view.CadastrarNotaActivity" /> -->
         <activity android:name=".view.CalendarioActivity" />
-        <activity android:name=".view.EditarNotaActivity" />
-        <activity android:name=".view.MenuInicialActivity" />
-        <activity android:name=".view.VerPerfilActivity" />
-        <activity android:name=".view.ListNotasActivity" />
-        <activity android:name=".LinhaActivity"></activity>
+        <!-- <activity android:name=".view.EditarNotaActivity" /> -->
+        <!-- <activity android:name=".view.MenuInicialActivity" /> -->
+        <!-- <activity android:name=".view.VerPerfilActivity" /> -->
+        <!-- <activity android:name=".view.ListNotasActivity" /> -->
+        <!-- <activity android:name=".LinhaActivity" /> -->
+        <!-- <activity android:name=".view.MainActivity"></activity> -->
+
+
+        <!--title_activity_pagina_inicial-->
+        <activity
+            android:name=".view.PaginaInicialActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <action android:name="android.intent.action.VIEW" />
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
