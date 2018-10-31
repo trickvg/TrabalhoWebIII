@@ -5,7 +5,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 
 public class ConfiguraFirebase<T> {
-
+    private static double whatever = 2.0;
     private static DatabaseReference reference = null;
     private static FirebaseStorage storage = null;
 
