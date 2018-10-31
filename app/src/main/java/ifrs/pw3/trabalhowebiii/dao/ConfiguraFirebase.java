@@ -18,5 +18,5 @@ public class ConfiguraFirebase<T> {
     public static FirebaseStorage getStorage(){
         return FirebaseStorage.getInstance();
     }
-
+//
 }
