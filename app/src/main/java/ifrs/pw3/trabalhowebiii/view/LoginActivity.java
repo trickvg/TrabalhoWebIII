@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText login;
     private EditText senha;
     private Button btnLogin;
-    private Button btnCadastrar;
+    //private Button btnCadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,13 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Informe email e senha!", Toast.LENGTH_SHORT).show();
                 }
             });
-            btnCadastrar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(LoginActivity.this, CadastrarUsuarioActivity.class);
-                    startActivity(intent);
-                }
-            });
+//            btnCadastrar.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent intent = new Intent(LoginActivity.this, CadastrarUsuarioActivity.class);
+//                    startActivity(intent);
+//                }
+//            });
 
             mAuth = FirebaseAuth.getInstance();
         }
