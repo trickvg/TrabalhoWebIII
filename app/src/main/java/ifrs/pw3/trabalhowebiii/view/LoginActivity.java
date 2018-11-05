@@ -15,8 +15,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
 import ifrs.pw3.trabalhowebiii.R;
+
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -48,13 +49,13 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Informe email e senha!", Toast.LENGTH_SHORT).show();
                 }
             });
-//            btnCadastrar.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    Intent intent = new Intent(LoginActivity.this, CadUsuarioActivity.class);
-//                    startActivity(intent);
-//                }
-//            });
+            btnCadastrar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(LoginActivity.this, CadastrarUsuarioActivity.class);
+                    startActivity(intent);
+                }
+            });
 
             mAuth = FirebaseAuth.getInstance();
         }

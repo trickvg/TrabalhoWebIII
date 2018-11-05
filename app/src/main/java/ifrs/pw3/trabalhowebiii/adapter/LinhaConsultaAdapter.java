@@ -1,109 +1,172 @@
-//package ifrs.pw3.trabalhowebiii.adapter;
+package ifrs.pw3.trabalhowebiii.adapter;
+
+import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+import ifrs.pw3.trabalhowebiii.view.AtualizarEventoActivity;
+import ifrs.pw3.trabalhowebiii.view.ListarEventoActivity;
+import ifrs.pw3.trabalhowebiii.R;
+import ifrs.pw3.trabalhowebiii.view.SearchActivity;
+import ifrs.pw3.trabalhowebiii.dao.ConfiguraFirebase;
+import ifrs.pw3.trabalhowebiii.model.Evento;
+
+public class LinhaConsultaAdapter extends BaseAdapter {
+
+    //Cria objeto LayoutInflater para ligar com a View activity_linha.xml
+    private static LayoutInflater layoutInflater = null;
+
+    ArrayList<Evento> eventos = new ArrayList<>();
+
+
+    //Cria objeto do tipo que lista as tarefas
+    ListarEventoActivity listarEventos;
+
+    private SearchActivity pesquisarEventos;
+
+    //Construtor que recebe a ativida como parametro e a lista de tarefas que vai retornar do BD
+    public LinhaConsultaAdapter(ListarEventoActivity listarEventos, ArrayList<Evento> eventos) {
+        this.eventos = eventos;
+        this.listarEventos = listarEventos;
+        this.layoutInflater = (LayoutInflater) this.listarEventos.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    public LinhaConsultaAdapter(SearchActivity pesquisarEventos, ArrayList<Evento> eventos) {
+        this.eventos = eventos;
+        this.pesquisarEventos = pesquisarEventos;
+        this.layoutInflater = (LayoutInflater) this.pesquisarEventos.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+
+    //Retorna a quantidade de objetos que sta na lista
+    @Override
+    public int getCount() {
+        return eventos.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return position;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    //Método converte os valoes de um item  da lista de Tarefas para uma linha do ListView
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        //Cria um objeto para acessar o layout activity_linha.xml
+        final View viewLinhaLista = layoutInflater.inflate(R.layout.activity_linha, null);
+
+        //vincula os campos do arquivo de layout aos objetos cadastrados
+        final TextView textViewTituloEvento = viewLinhaLista.findViewById(R.id.textViewTituloEvento);
+        final TextView textViewDescricaoEvento = viewLinhaLista.findViewById(R.id.textViewDescricaoEvento);
+        final TextView textViewLocalEvento = viewLinhaLista.findViewById(R.id.textViewLocalEvento);
+        final TextView textViewHorarioEvento = viewLinhaLista.findViewById(R.id.textViewHorarioEvento);
+        final TextView textViewDataEvento = viewLinhaLista.findViewById(R.id.textViewDataEvento);
+
+        textViewTituloEvento.setText(eventos.get(position).getTitulo_evento());
+        textViewDescricaoEvento.setText(eventos.get(position).getDescricao_evento());
+        textViewLocalEvento.setText(String.valueOf(eventos.get(position).getLocal_evento()));
+        textViewHorarioEvento.setText(String.valueOf(eventos.get(position).getHorario_evento()));
+        textViewDataEvento.setText(String.valueOf(eventos.get(position).getData_evento()));
+
+        if (pesquisarEventos != null) {
+            Button buttonExcluir = viewLinhaLista.findViewById(R.id.buttonExcluir);
+            buttonExcluir.setVisibility(View.INVISIBLE);
+            Button buttonEditar = viewLinhaLista.findViewById(R.id.buttonEditar);
+            buttonEditar.setVisibility(View.INVISIBLE);
+        }
+
+        if (listarEventos != null) {
+            Button buttonExcluir = viewLinhaLista.findViewById(R.id.buttonExcluir);
+            Button buttonEditar = viewLinhaLista.findViewById(R.id.buttonEditar);
+
+
+            //Criando evento para excluir um registro do BD
+            buttonExcluir.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String mensagem = "Registro excluído com sucesso!";
+                    //usa o objeto produto para fazer a exclusão
+                    final Evento produto = eventos.get(position);
+                    final DatabaseReference reference = ConfiguraFirebase.getNo("eventos");
+                    reference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (!eventos.isEmpty()) {
+                                eventos.remove(position);
+                                reference.child(produto.getId_evento()).removeValue();
+                                notifyList();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            });
+
+
+            //Criando evento para editar um registro do BD
+            buttonEditar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //EXERCÍCIO FAZER A TAREFA DE EDIÇÃO USANDO A LÓGICA DA EXCLUSÃO
+
+                    final Evento evento = eventos.get(position);
+
+                    Intent intent = new Intent(listarEventos, AtualizarEventoActivity.class);
+                    intent.putExtra("id_evento",evento.getId_evento());
+                    intent.putExtra("titulo_evento",textViewTituloEvento.getText());
+                    intent.putExtra("descricao_evento",textViewDescricaoEvento.getText());
+                    intent.putExtra("local_evento", textViewLocalEvento.getText());
+                    intent.putExtra("horario_evento", textViewHorarioEvento.getText());
+                    intent.putExtra("data_evento", textViewDataEvento.getText());
+//                    Log.d("msg", "2");
+                    listarEventos.startActivity(intent);
+
 //
-//import android.content.Context;
-//import android.content.Intent;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//import android.widget.BaseAdapter;
-//import android.widget.Button;
-//import android.widget.TextView;
-//import android.widget.Toast;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//import ifrs.pw3.trabalhowebiii.R;
-//import ifrs.pw3.trabalhowebiii.dao.NotaRepository;
-//import ifrs.pw3.trabalhowebiii.model.Nota;
-//import ifrs.pw3.trabalhowebiii.view.EditarNotaActivity;
-//import ifrs.pw3.trabalhowebiii.view.ListNotasActivity;
 //
 //
-//public class LinhaConsultaAdapter extends BaseAdapter {
+//                    HashMap<String, Object> map = new HashMap<>();
 //
-//    //Cria objeto LayoutInflater para ligar com a View activity_linha.xml
-//    private static LayoutInflater layoutInflater = null;
+//                    if (produto.getNome() != null)
+//                        map.put("nome", produto.getNome());
+//                    if (produto.getDescricao() != null)
+//                        map.put("nome", produto.getDescricao());
+//                    if (produto.getValorUnitario() > 0)
+//                        map.put("valor", produto.getValorUnitario());
 //
-//    List<Nota> notas = new ArrayList<>();
-//    NotaRepository notaRepository;
-//
-//    //Cria objeto do tipo que lista as tarefas
-//    private ListNotasActivity listarAtividades;
-//
-//    //Construtor que recebe a ativida como parametro e a lista de tarefas que vai retornar do BD
-//    public LinhaConsultaAdapter(ListNotasActivity listarAtividades, List<Nota> notas) {
-//        this.notas = notas;
-//        this.listarAtividades = listarAtividades;
-//        this.layoutInflater = (LayoutInflater) this.listarAtividades.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        notaRepository = new NotaRepository(listarAtividades);
-//    }
-//
-//    //Retorna a quantidade de objetos que esta na lista
-//    @Override
-//    public int getCount() {
-//        return notas.size();
-//    }
-//
-//    @Override
-//    public Object getItem(int position) {
-//        return position;
-//    }
-//
-//    @Override
-//    public long getItemId(int position) {
-//        return position;
-//    }
-//
-//    //Método converte os valores de um item  da lista de Tarefas para uma linha do ListView
-//    @Override
-//    public View getView(final int position, View convertView, ViewGroup parent) {
-//        //Cria um objeto para acessar o layout activity_linha.xml
-//        final View viewLinhaLista = layoutInflater.inflate(R.layout.activity_linha, null);
-//
-//        //vincula os campos do arquivo de layout aos objetos cadastrados
-//        TextView textViewTitulo = (TextView) viewLinhaLista.findViewById(R.id.textViewTitulo);
-////        TextView textViewNome  = (TextView) viewLinhaLista.findViewById(R.id.textViewNome);
-//        TextView textViewDescricao = (TextView) viewLinhaLista.findViewById(R.id.textViewDescricao);
-////        TextView textViewData = (TextView) viewLinhaLista.findViewById(R.id.textViewData);
-//        Button buttonExcluir = (Button) viewLinhaLista.findViewById(R.id.buttonExcluir);
-//        Button buttonEditar = (Button) viewLinhaLista.findViewById(R.id.buttonEditar);
-//
-//        textViewTitulo.setText(String.valueOf(notas.get(position).getTitulo_nota()));
-////        textViewNome.setText(tarefas.get(position).getNome());
-//        textViewDescricao.setText(notas.get(position).getDescricao_nota());
-////        textViewData.setText(tarefas.get(position).getData());
-//
-//        //Criando evento para excluir um registro do BD
-//        buttonExcluir.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String mensagem = "Registro excluído com sucesso!";
-//                Integer retorno = notaRepository.delete(notas.get(position).get_id_nota());
-//                if (retorno == 0)
-//                    mensagem = "Erro ao excluir registro!";
-//                Toast.makeText(listarAtividades, mensagem, Toast.LENGTH_LONG).show();
-//                atualizaLista();
-//            }
-//        });
-//
-//        //Criando evento para editar um registro do BD
-//        buttonEditar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(listarAtividades, EditarNotaActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                intent.putExtra("_id_nota", notas.get(position).get_id_nota());
-//                listarAtividades.startActivity(intent);
-//            }
-//        });
-//        return viewLinhaLista;
-//    }
-//
-//    //atualizando a lista após excluir registro
-//    public void atualizaLista() {
-//        this.notas.clear();
-//        this.notas = notaRepository.getAll();
-//        this.notifyDataSetChanged();
-//    }
-//}
+//                    reference.child(produto.getId()).updateChildren(map);
+                }
+            });
+            //ajustar com método
+
+
+        }
+        return viewLinhaLista;
+    }
+
+    private void notifyList() {
+        this.notifyDataSetChanged();
+    }
+
+}
