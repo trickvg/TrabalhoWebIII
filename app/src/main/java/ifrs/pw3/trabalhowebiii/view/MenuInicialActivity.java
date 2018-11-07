@@ -21,14 +21,7 @@ public class MenuInicialActivity extends AppCompatActivity {
         Button btnLocalizacaoIFRS = findViewById(R.id.btnLocalizacaoIFRS);
         Button btnEditarNota = findViewById(R.id.btnEditarNota);
 
-        btnEditarNota.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intencao = new Intent(getApplicationContext(), ListNotasActivity.class);
-                startActivity(intencao);
 
-            }
-        });
 
         btnLocalizacaoIFRS.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,21 +34,6 @@ public class MenuInicialActivity extends AppCompatActivity {
             }
         });
 
-        btnCadastrarUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intencao = new Intent(getApplicationContext(), CadastrarPerfilActivity.class);
-                startActivity(intencao);
-            }
-        });
 
-
-        btnCadastrarNota.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intencao = new Intent(getApplicationContext(), CadastrarNotaActivity.class);
-                startActivity(intencao);
-            }
-        });
     }
 }

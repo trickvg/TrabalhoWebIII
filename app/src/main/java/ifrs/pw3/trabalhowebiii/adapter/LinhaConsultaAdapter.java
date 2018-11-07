@@ -148,20 +148,10 @@ public class LinhaConsultaAdapter extends BaseAdapter {
 //
 //
 //
-//                    HashMap<String, Object> map = new HashMap<>();
 //
-//                    if (produto.getNome() != null)
-//                        map.put("nome", produto.getNome());
-//                    if (produto.getDescricao() != null)
-//                        map.put("nome", produto.getDescricao());
-//                    if (produto.getValorUnitario() > 0)
-//                        map.put("valor", produto.getValorUnitario());
-//
-//                    reference.child(produto.getId()).updateChildren(map);
                 }
             });
             //ajustar com método
-
 
         }
         return viewLinhaLista;

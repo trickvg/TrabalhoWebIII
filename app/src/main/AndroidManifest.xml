@@ -33,16 +33,16 @@
          <category android:name="android.intent.category.LAUNCHER" />
          </intent-filter>
          </activity>
-         <activity android:name=".view.CadastrarPerfilActivity" />
-         <activity android:name=".view.CadastrarNotaActivity" />
         <activity android:name=".view.CadastrarUsuarioActivity" />
 
         <activity android:name=".view.CalendarioActivity" />
-         <activity android:name=".view.EditarNotaActivity" />
-         <activity android:name=".view.MenuInicialActivity" />
-         <activity android:name=".view.VerPerfilActivity" />
-         <activity android:name=".view.ListNotasActivity" />
-         <activity android:name=".LinhaActivity" />
+        <activity android:name=".view.MenuInicialActivity" />
+        <activity android:name=".view.PaginaCadastroEventoActivity" />
+        <activity android:name=".view.ListarEventoActivity" />
+
+
+        <activity android:name=".view.VerPerfilActivity" />
+        <activity android:name=".LinhaActivity" />
 
 
         <!--title_activity_pagina_inicial-->
