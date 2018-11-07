@@ -25,6 +25,7 @@ public class SearchActivity extends AppCompatActivity {
     ListView lista = null;
     ArrayAdapter<Evento> listAdapter = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,7 @@ public class SearchActivity extends AppCompatActivity {
         //pega o valor que veio pela intenção
         Intent intent = getIntent();
         String parametroPesquisa = intent.getStringExtra("pesquisa");
-//        Log.d("MSG", "s = " + parametroPesquisa);
+        Log.d("MSG", "s = " + parametroPesquisa);
 
         DatabaseReference reference = ConfiguraFirebase.getNo("eventos");
         listEventos = new ArrayList<>();

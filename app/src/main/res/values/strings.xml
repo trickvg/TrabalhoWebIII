@@ -50,7 +50,16 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_add_user">Cadastrar User</string>
+    <string name="action_add_evento">Cadastrar Event</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Excluir</string>
+    <string name="action_list_users">Listar Usuários</string>
+    <string name="action_list_eventos">Listar Eventos</string>
+    <string name="action_list_notas">Listar Notas</string>
+
+    <string name="action_exit">Sair</string>
+    <string name="action_imagem">Upload</string>
 
 
     <string name="login">Login</string>
@@ -69,10 +78,6 @@
     <string name="action_sair">Sair</string>
 
 
-    <!--activity linha-->
-    <string name="action_edit">Editar</string>
-    <string name="action_delete">Excluir</string>
-
     <!--activity atualizar evento-->
     <string name="textoRecebidoTitulo">Titulo</string>
     <string name="textoRecebidoDescricao">Descricão</string>
@@ -83,6 +88,7 @@
 
     <!--pagina_inicial.xml-->
     <string name="action_search">Pesquisar</string>
+    <string name="action_settings">Settings</string>
 
     <!--activity linha-->
     <string name="linhaTitulo">Titulo Evento</string>

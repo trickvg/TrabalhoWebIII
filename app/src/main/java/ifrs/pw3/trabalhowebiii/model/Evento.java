@@ -1,5 +1,7 @@
 package ifrs.pw3.trabalhowebiii.model;
 
+import java.util.Date;
+
 public class Evento {
 
     private String id_evento;
@@ -9,9 +11,7 @@ public class Evento {
     private String horario_evento;
     private String data_evento;
 
-
-    public Evento() {
-    }
+    public Evento() {}
 
     public Evento(String titulo_evento, String descricao_evento, String local_evento, String horario_evento, String data_evento) {
         this.titulo_evento = titulo_evento;
@@ -22,7 +22,7 @@ public class Evento {
     }
 
     public Evento(String id_evento, String titulo_evento, String descricao_evento, String local_evento, String horario_evento, String data_evento) {
-        this.id_evento = id_evento;
+
         this.titulo_evento = titulo_evento;
         this.descricao_evento = descricao_evento;
         this.local_evento = local_evento;

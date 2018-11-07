@@ -40,7 +40,7 @@ public class ListarEventoActivity extends ListActivity {
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     //para buscar todos os nós filhos de produtos
                     Evento evento = ds.getValue(Evento.class);
-                    evento.setId_evento(ds.getKey());
+                  //  evento.setId_evento(ds.getKey());
                     listEventos.add(evento);
                 }
                 lista.setAdapter(new LinhaConsultaAdapter(ListarEventoActivity.this, listEventos));

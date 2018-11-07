@@ -1,8 +1,7 @@
 package ifrs.pw3.trabalhowebiii.model;
 
-import java.util.Objects;
-
 public class Pessoa {
+
     private Integer _id;
     private String nome;
     private String senha;

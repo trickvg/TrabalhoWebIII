@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import ifrs.pw3.trabalhowebiii.view.AtualizarEventoActivity;
 import ifrs.pw3.trabalhowebiii.view.ListarEventoActivity;
 import ifrs.pw3.trabalhowebiii.R;
+import ifrs.pw3.trabalhowebiii.view.*;
+
 import ifrs.pw3.trabalhowebiii.view.SearchActivity;
 import ifrs.pw3.trabalhowebiii.dao.ConfiguraFirebase;
 import ifrs.pw3.trabalhowebiii.model.Evento;
@@ -98,20 +100,20 @@ public class LinhaConsultaAdapter extends BaseAdapter {
             Button buttonEditar = viewLinhaLista.findViewById(R.id.buttonEditar);
 
 
-            //Criando evento para excluir um registro do BD
+//            //Criando evento para excluir um registro do BD
             buttonExcluir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String mensagem = "Registro excluído com sucesso!";
-                    //usa o objeto produto para fazer a exclusão
-                    final Evento produto = eventos.get(position);
+                    //usa o objeto evento para fazer a exclusão
+                    final Evento evento = eventos.get(position);
                     final DatabaseReference reference = ConfiguraFirebase.getNo("eventos");
                     reference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if (!eventos.isEmpty()) {
                                 eventos.remove(position);
-                                reference.child(produto.getId_evento()).removeValue();
+                                reference.child(evento.getId_evento()).removeValue();
                                 notifyList();
                             }
                         }
