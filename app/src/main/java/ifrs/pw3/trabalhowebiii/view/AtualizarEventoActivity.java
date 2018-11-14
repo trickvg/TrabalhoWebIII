@@ -1,8 +1,9 @@
 package ifrs.pw3.trabalhowebiii.view;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -74,6 +75,7 @@ public class AtualizarEventoActivity extends AppCompatActivity {
                     map.put("data_evento", data);
 
                 reference.child(id).updateChildren(map);
+//                reference.
                 Toast.makeText(getApplicationContext(), "atualizado", Toast.LENGTH_LONG);
 
                 finish();

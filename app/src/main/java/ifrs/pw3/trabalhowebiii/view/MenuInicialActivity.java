@@ -17,7 +17,7 @@ public class MenuInicialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_inicial);
 
         Button btnCadastrarUser = findViewById(R.id.btnCadastrarUsuario);
-        Button btnCadastrarNota = findViewById(R.id.btnCadastrarNota);
+        Button btnCadastrarEvento = findViewById(R.id.btn_cadastrar_evento);
         Button btnLocalizacaoIFRS = findViewById(R.id.btnLocalizacaoIFRS);
         Button btnEditarNota = findViewById(R.id.btnEditarNota);
 

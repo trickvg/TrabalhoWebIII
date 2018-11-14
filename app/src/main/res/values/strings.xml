@@ -56,6 +56,8 @@
     <string name="action_delete">Excluir</string>
     <string name="action_list_users">Listar Usuários</string>
     <string name="action_list_eventos">Listar Eventos</string>
+    <string name="action_list_eventos_card">Listar EventosCard</string>
+
     <string name="action_list_notas">Listar Notas</string>
 
     <string name="action_exit">Sair</string>
@@ -67,6 +69,7 @@
     <string name="btn_entrar">Entrar</string>
 
     <!--activity pagina cadastro evento-->
+    <string name="txtCadastro_evento">Cadastro de eventos</string>
     <string name="titulo_evento">Titulo Evento</string>
     <string name="descricao_evento">Descrição Evento</string>
     <string name="local_evento">Local Evento</string>
@@ -96,4 +99,9 @@
     <string name="linhaLocal">Local Evento</string>
     <string name="linhaData">Data Evento</string>
     <string name="linhaHorario">Horario Evento</string>
+
+    <!--activity cards-->
+    <string name="card_title">Titulo Evento</string>
+    <string name="action_list_evento_card"> Lista Card</string>
+    <string name="deletar_card">Deletar</string>
 </resources>

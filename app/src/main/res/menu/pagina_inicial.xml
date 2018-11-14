@@ -11,4 +11,13 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_login"
+        android:title="@string/action_login"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_list_eventos_card"
+        android:title="@string/action_list_eventos_card"
+        app:showAsAction="never" />
 </menu>

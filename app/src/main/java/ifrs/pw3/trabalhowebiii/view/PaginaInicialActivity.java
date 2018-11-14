@@ -93,7 +93,9 @@ public class PaginaInicialActivity extends AppCompatActivity
             Intent intent = new Intent(PaginaInicialActivity.this, PaginaCadastroEventoActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_listUser) {
+        } else if (id == R.id.nav_listEventosCard) {
+            Intent intent = new Intent(PaginaInicialActivity.this, ListarEventoCardActivity.class);
+            startActivity(intent);
 
 
         } else if (id == R.id.nav_listEventos) {
