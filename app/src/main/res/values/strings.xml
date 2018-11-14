@@ -23,8 +23,8 @@
     <string name="emailLogin">Digite seu email</string>
     <string name="senhaLogin">Digite sua senha</string>
     <string name="btnLoginEntrar">Entrar</string>
-
-
+    <string name="btnLoginCadastrar">Cadastrar-se</string>
+    
     <!--strings da tela activity cadastrar nota-->
     <string name="tituloNota">Insira o titulo</string>
     <string name="descricaoNota">Insira a descrição</string>
