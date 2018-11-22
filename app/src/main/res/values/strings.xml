@@ -77,8 +77,7 @@
     <string name="data_evento">Data Evento</string>
 
 
-    <string name="action_login">Login</string>
-    <string name="action_sair">Sair</string>
+
 
 
     <!--activity atualizar evento-->
@@ -92,6 +91,8 @@
     <!--pagina_inicial.xml-->
     <string name="action_search">Pesquisar</string>
     <string name="action_settings">Settings</string>
+    <string name="action_login">Login</string>
+    <string name="action_sair">Sair</string>
 
     <!--activity linha-->
     <string name="linhaTitulo">Titulo Evento</string>
@@ -104,4 +105,14 @@
     <string name="card_title">Titulo Evento</string>
     <string name="action_list_evento_card"> Lista Card</string>
     <string name="deletar_card">Deletar</string>
+
+    <!--layout adapter list-->
+    <string name="textViewTituloEvento">Titulo evento</string>
+    <string name="textViewDescricaoEvento">Descricao Evento</string>
+    <string name="textViewLocalEvento">Local Evento</string>
+    <string name="textViewHorarioEvento">Horario Evento</string>
+    <string name="textViewDataEvento">Data Evento</string>
+
+    <string name="deletar">Deletar</string>
+
 </resources>

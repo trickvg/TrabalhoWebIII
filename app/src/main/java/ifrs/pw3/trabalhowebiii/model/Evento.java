@@ -13,16 +13,8 @@ public class Evento {
 
     public Evento() {}
 
+
     public Evento(String titulo_evento, String descricao_evento, String local_evento, String horario_evento, String data_evento) {
-        this.titulo_evento = titulo_evento;
-        this.descricao_evento = descricao_evento;
-        this.local_evento = local_evento;
-        this.horario_evento = horario_evento;
-        this.data_evento = data_evento;
-    }
-
-    public Evento(String id_evento, String titulo_evento, String descricao_evento, String local_evento, String horario_evento, String data_evento) {
-
         this.titulo_evento = titulo_evento;
         this.descricao_evento = descricao_evento;
         this.local_evento = local_evento;
@@ -77,5 +69,17 @@ public class Evento {
 
     public void setData_evento(String data_evento) {
         this.data_evento = data_evento;
+    }
+
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "id_evento='" + id_evento + '\'' +
+                ", titulo_evento='" + titulo_evento + '\'' +
+                ", descricao_evento='" + descricao_evento + '\'' +
+                ", local_evento='" + local_evento + '\'' +
+                ", horario_evento='" + horario_evento + '\'' +
+                ", data_evento='" + data_evento + '\'' +
+                '}';
     }
 }

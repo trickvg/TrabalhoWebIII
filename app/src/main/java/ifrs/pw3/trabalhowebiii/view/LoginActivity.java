@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText login;
     private EditText senha;
     private Button btnLogin;
-    //private Button btnCadastrar;
+//    private Button btnCadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 
             mAuth = FirebaseAuth.getInstance();
         }
-
     }
-
     private Boolean usuarioLogado(){
         //Se o usuário já está logado não precisa fazer login novamente
         Log.d("Login", "instance"+FirebaseAuth.getInstance());

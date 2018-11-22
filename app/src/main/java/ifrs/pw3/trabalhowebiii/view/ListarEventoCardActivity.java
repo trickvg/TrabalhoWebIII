@@ -13,7 +13,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import  ifrs.pw3.trabalhowebiii.R;
+
+import ifrs.pw3.trabalhowebiii.R;
 import ifrs.pw3.trabalhowebiii.adapter.MyAdapterCard;
 import ifrs.pw3.trabalhowebiii.model.Evento;
 
@@ -28,7 +29,7 @@ public class ListarEventoCardActivity extends AppCompatActivity implements Click
         setContentView(R.layout.activity_listar_evento_card);
 
         recyclerView = findViewById(R.id.recyclerView);
-        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("eventos");
@@ -60,9 +61,9 @@ public class ListarEventoCardActivity extends AppCompatActivity implements Click
 
     @Override
     public void onCustomClick(Object object) {
-        System.out.println("funciona");
-        Evento p = (Evento) object;
-        System.out.println("PEssoa = " + p.toString());
+        System.out.println("funciona...");
+        Evento e = (Evento) object;
+        System.out.println("Evento = " + e.toString());
     }
 
 }

@@ -58,7 +58,6 @@ public class AtualizarEventoActivity extends AppCompatActivity {
                 String horario = ((TextView) findViewById(R.id.textoRecebidoHorario)).getText().toString();
                 String data = ((TextView) findViewById(R.id.textoRecebidoData)).getText().toString();
 
-
                 final DatabaseReference reference = ConfiguraFirebase.getNo("eventos");
 
                 HashMap<String, Object> map = new HashMap<>();
@@ -79,12 +78,7 @@ public class AtualizarEventoActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "atualizado", Toast.LENGTH_LONG);
 
                 finish();
-
-
             }
         });
-
     }
-
-
 }

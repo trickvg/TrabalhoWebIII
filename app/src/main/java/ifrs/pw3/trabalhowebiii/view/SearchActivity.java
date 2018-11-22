@@ -4,65 +4,80 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import  ifrs.pw3.trabalhowebiii.R;
-import ifrs.pw3.trabalhowebiii.adapter.LinhaConsultaAdapter;
-import ifrs.pw3.trabalhowebiii.dao.ConfiguraFirebase;
-import ifrs.pw3.trabalhowebiii.model.Evento;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import ifrs.pw3.trabalhowebiii.R;
+import ifrs.pw3.trabalhowebiii.adapter.MyAdapterCard;
+import ifrs.pw3.trabalhowebiii.dao.ConfiguraFirebase;
+import ifrs.pw3.trabalhowebiii.model.Evento;
+
 import java.util.ArrayList;
 
-public class SearchActivity extends AppCompatActivity {
-    private ArrayList<Evento> listEventos = new ArrayList<>();
-    ListView lista = null;
-    ArrayAdapter<Evento> listAdapter = null;
-
+public class SearchActivity extends AppCompatActivity implements ClickRecycler {
+    private RecyclerView recyclerView;
+    MyAdapterCard adapter;
+    //    private List<User> listausers = new ArrayList<>();
+    private ArrayList<Evento> listaEventos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_listar_evento_recycler);
 
-        listEventos = new ArrayList<>();
-        lista = findViewById(R.id.listaEventosPesquisa);
-        listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listEventos);
+        recyclerView = findViewById(R.id.recyclerView);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+//        for (int i = 0; i < 5; i++) {
+//            listausers.add(User.carrega());
+//            listausers.add(ListaRecyclerCard.carrega());
+
+
 
         //pega o valor que veio pela intenção
         Intent intent = getIntent();
         String parametroPesquisa = intent.getStringExtra("pesquisa");
-        Log.d("MSG", "s = " + parametroPesquisa);
 
         DatabaseReference reference = ConfiguraFirebase.getNo("eventos");
-        listEventos = new ArrayList<>();
+
         //ordenar os resultados pelo nome e mostrar somente os registros que possuem o nome passado como parâmetro na janela de pesquisa
         Query pesquisa = reference.orderByChild("titulo_evento").equalTo(parametroPesquisa);
 
         pesquisa.addValueEventListener(new ValueEventListener() {
             @Override
+            //é chamado sempre que consegue recuperar algum dado
+            //DataSnapshot é o retorno do Firebase => resultado da consulta
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.d("MSG", "Dados do evento => " + dataSnapshot.getValue().toString());
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    //para buscar todos os nós filhos de produtos
+                    //para buscar todos os nós filhos de eventos
                     Evento evento = ds.getValue(Evento.class);
                     evento.setId_evento(ds.getKey());
-                    listEventos.add(evento);
+                    listaEventos.add(evento);
                 }
-                lista.setAdapter(new LinhaConsultaAdapter(SearchActivity.this, listEventos));
+//                    lista.setAdapter(new LinhaConsultaAdapter(ListarEventoActivity.this, listUsuarios));
             }
 
             @Override
+            //chamado quando a requisição é cancelada
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
+        adapter = new MyAdapterCard(this, listaEventos, this);
+        recyclerView.setAdapter(adapter);
 
     }
+
+    @Override
+    public void onCustomClick(Object object) {
+        System.out.println("funciona");
+        Evento p = (Evento) object;
+        System.out.println("PEssoa = " + p.toString());
+    }
+
 }
+

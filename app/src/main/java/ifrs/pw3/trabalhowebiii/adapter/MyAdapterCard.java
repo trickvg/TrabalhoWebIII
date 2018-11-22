@@ -36,9 +36,8 @@ public class MyAdapterCard extends RecyclerView.Adapter<MyAdapterCard.MyViewHold
     public MyAdapterCard(Context ctx, List<Evento> list, ClickRecycler clickRecycler) {
         this.contexto = ctx;
         this.listaEventos = list;
-        MyAdapterCard.clickRecycler = clickRecycler;
+        this.clickRecycler = clickRecycler;
     }
-
     @Override
     public MyViewHolderCard onCreateViewHolder(ViewGroup viewGroup, int i) {
         System.out.println("Contexto=" + viewGroup.getContext());

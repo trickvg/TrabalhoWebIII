@@ -39,12 +39,12 @@
         <activity android:name=".view.MenuInicialActivity" />
         <activity android:name=".view.PaginaCadastroEventoActivity" />
         <activity android:name=".view.ListarEventoActivity" />
-        <activity android:name=".view.ListarEventoRecycler" />
 
         <activity android:name=".view.ListarEventoCardActivity"></activity>
-
         <activity
             android:name=".view.AtualizarEventoActivity"
+            android:parentActivityName=".view.PaginaInicialActivity" />
+        <activity android:name=".view.ListarEventoRecycler"
             android:parentActivityName=".view.PaginaInicialActivity" />
 
         <activity android:name=".view.VerPerfilActivity" />

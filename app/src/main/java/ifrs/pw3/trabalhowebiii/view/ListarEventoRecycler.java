@@ -6,9 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
-import  ifrs.pw3.trabalhowebiii.R;
-import ifrs.pw3.trabalhowebiii.adapter.MyAdapterCard;
-import ifrs.pw3.trabalhowebiii.model.Evento;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,8 +14,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ListarEventoRecycler extends AppCompatActivity implements ClickRecycler {
+import ifrs.pw3.trabalhowebiii.R;
+import ifrs.pw3.trabalhowebiii.adapter.MyAdapterCard;
+import ifrs.pw3.trabalhowebiii.model.Evento;
 
+public class ListarEventoRecycler extends AppCompatActivity implements ClickRecycler {
+    private static final int VERTICAL_ITEM_SPACE = 48;
     private RecyclerView recyclerView;
     MyAdapterCard adapter;
     //    private List<User> listausers = new ArrayList<>();
@@ -59,13 +60,14 @@ public class ListarEventoRecycler extends AppCompatActivity implements ClickRecy
         adapter = new MyAdapterCard(this, listaEventos, this);
         recyclerView.setAdapter(adapter);
 
+
     }
 
     @Override
     public void onCustomClick(Object object) {
-        System.out.println("funciona");
-        Evento p = (Evento) object;
-        System.out.println("PEssoa = " + p.toString());
+        System.out.println("funciona...");
+        Evento e = (Evento) object;
+        System.out.println("Evento = " + e.toString());
     }
 
 }
