@@ -31,17 +31,25 @@ public class MyAdapterCard extends RecyclerView.Adapter<MyAdapterCard.MyViewHold
     Context contexto;
     private List<Evento> listaEventos;
 
-//    ListarEventoRecycler listarEventoRecycler;
+    ListarEventoCardActivity ListarEventoCardActivity;
 
     public MyAdapterCard(Context ctx, List<Evento> list, ClickRecycler clickRecycler) {
         this.contexto = ctx;
         this.listaEventos = list;
-        this.clickRecycler = clickRecycler;
+        MyAdapterCard.clickRecycler = clickRecycler;
     }
+
+
+
+    public MyAdapterCard(ListarEventoCardActivity ctx, List<Evento> list) {
+        this.ListarEventoCardActivity = ctx;
+        this.listaEventos = list;
+    }
+
     @Override
     public MyViewHolderCard onCreateViewHolder(ViewGroup viewGroup, int i) {
         System.out.println("Contexto=" + viewGroup.getContext());
-        View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.lista_itens_recycler_card, viewGroup, false);
+        View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_list, viewGroup, false);
         return new MyViewHolderCard(itemView);
     }
 
@@ -86,7 +94,7 @@ public class MyAdapterCard extends RecyclerView.Adapter<MyAdapterCard.MyViewHold
 
                 final Evento evento = listaEventos.get(position);
 
-                Intent intent = new Intent(contexto, AtualizarEventoActivity.class);
+                Intent intent = new Intent(ListarEventoCardActivity, AtualizarEventoActivity.class);
                 intent.putExtra("id_evento", evento.getId_evento());
                 intent.putExtra("titulo_evento", evento.getTitulo_evento());
                 intent.putExtra("descricao_evento", evento.getDescricao_evento());
@@ -94,7 +102,8 @@ public class MyAdapterCard extends RecyclerView.Adapter<MyAdapterCard.MyViewHold
                 intent.putExtra("horario_evento", evento.getHorario_evento());
                 intent.putExtra("data_evento", evento.getData_evento());
 //                    Log.d("msg", "2");
-                contexto.startActivity(intent);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                ListarEventoCardActivity.startActivity(intent);
 
             }
         });
@@ -136,8 +145,8 @@ public class MyAdapterCard extends RecyclerView.Adapter<MyAdapterCard.MyViewHold
             textViewHorario = itemView.findViewById(R.id.textViewHorarioEvento);
             textViewData = itemView.findViewById(R.id.textViewDataEvento);
 
-//            buttonExcluir = itemView.findViewById(R.id.btnExcluirCard);
-//            buttonEditar = itemView.findViewById(R.id.btnEditarCard);
+            buttonExcluir = itemView.findViewById(R.id.btnExcluirCard);
+            buttonEditar = itemView.findViewById(R.id.btnEditarCard);
 
         }
     }
