@@ -9,6 +9,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
@@ -30,6 +31,7 @@ public class SearchActivity extends AppCompatActivity implements ClickRecycler {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_evento_recycler);
 
+
         recyclerView = findViewById(R.id.recyclerView);
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -38,14 +40,12 @@ public class SearchActivity extends AppCompatActivity implements ClickRecycler {
 //            listausers.add(ListaRecyclerCard.carrega());
 
 
-
         //pega o valor que veio pela intenção
         Intent intent = getIntent();
         String parametroPesquisa = intent.getStringExtra("pesquisa");
 
-        DatabaseReference reference = ConfiguraFirebase.getNo("eventos");
-
         //ordenar os resultados pelo nome e mostrar somente os registros que possuem o nome passado como parâmetro na janela de pesquisa
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("eventos");
         Query pesquisa = reference.orderByChild("titulo_evento").equalTo(parametroPesquisa);
 
         pesquisa.addValueEventListener(new ValueEventListener() {
@@ -59,7 +59,7 @@ public class SearchActivity extends AppCompatActivity implements ClickRecycler {
                     evento.setId_evento(ds.getKey());
                     listaEventos.add(evento);
                 }
-//                    lista.setAdapter(new LinhaConsultaAdapter(ListarEventoActivity.this, listUsuarios));
+                recyclerView.setAdapter(new MyAdapterCard(SearchActivity.this, listaEventos));
             }
 
             @Override
@@ -67,7 +67,8 @@ public class SearchActivity extends AppCompatActivity implements ClickRecycler {
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
-        adapter = new MyAdapterCard(this, listaEventos, this);
+        //        adapter = new MyAdapterCard(this, listaEventos, this);
+        adapter = new MyAdapterCard(SearchActivity.this, listaEventos);
         recyclerView.setAdapter(adapter);
 
     }
@@ -75,8 +76,8 @@ public class SearchActivity extends AppCompatActivity implements ClickRecycler {
     @Override
     public void onCustomClick(Object object) {
         System.out.println("funciona");
-        Evento p = (Evento) object;
-        System.out.println("PEssoa = " + p.toString());
+        Evento e = (Evento) object;
+        System.out.println("Evento...  " + e.toString());
     }
 
 }

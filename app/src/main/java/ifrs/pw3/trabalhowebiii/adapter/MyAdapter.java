@@ -11,7 +11,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import ifrs.pw3.trabalhowebiii.R;
-import ifrs.pw3.trabalhowebiii.model.Pessoa;
 
 import ifrs.pw3.trabalhowebiii.model.Evento;
 import ifrs.pw3.trabalhowebiii.view.ClickRecycler;

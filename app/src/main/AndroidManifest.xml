@@ -14,36 +14,44 @@
 
         <activity
             android:name=".view.LoginActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
             </intent-filter>
         </activity>
 
          <activity
-         android:name=".view.SplashScreenActivity"
-         android:theme="@style/AppCompat.Fullscreen">
-         <intent-filter>
-         <action android:name="android.intent.action.MAIN" />
-
-
-         <category android:name="android.intent.category.LAUNCHER" />
-         </intent-filter>
+             android:name=".view.SplashScreenActivity"
+            android:theme="@style/AppCompat.Fullscreen">
+            <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
          </activity>
-        <activity android:name=".view.CadastrarUsuarioActivity" />
 
-        <activity android:name=".view.CalendarioActivity" />
-        <activity android:name=".view.MenuInicialActivity" />
-        <activity android:name=".view.PaginaCadastroEventoActivity" />
-        <activity android:name=".view.ListarEventoActivity" />
+        <activity android:name=".view.CadastrarUsuarioActivity"
+            android:parentActivityName=".view.PaginaInicialActivity" />
 
-        <activity android:name=".view.ListarEventoCardActivity"></activity>
+        <activity android:name=".view.CalendarioActivity"
+            android:parentActivityName=".view.PaginaInicialActivity" />
+
+        <activity android:name=".view.MenuInicialActivity"
+            android:parentActivityName=".view.PaginaInicialActivity" />
+
+        <activity android:name=".view.PaginaCadastroEventoActivity"
+            android:parentActivityName=".view.PaginaInicialActivity" />
+
+        <!--<activity android:name=".view.ListarEventoCardActivity"-->
+            <!--android:parentActivityName=".view.PaginaInicialActivity" />-->
+
         <activity
             android:name=".view.AtualizarEventoActivity"
             android:parentActivityName=".view.PaginaInicialActivity" />
+
         <activity android:name=".view.ListarEventoRecycler"
             android:parentActivityName=".view.PaginaInicialActivity" />
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TrabalhoWebIII</string>
+    <string name="app_name">Notifyme </string>
 
     <string name="btnSavePrfl">Salvar</string>
     <string name="btnUserPrfl">Ver Usuarios</string>
@@ -50,13 +50,15 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="action_page_inicial">Pagina Inicial</string>
     <string name="action_add_user">Cadastrar User</string>
     <string name="action_add_evento">Cadastrar Event</string>
+    <string name="action_sobre">Sobre o APP</string>
     <string name="action_edit">Editar</string>
     <string name="action_delete">Excluir</string>
     <string name="action_list_users">Listar Usuários</string>
     <string name="action_list_eventos">Listar Eventos</string>
-    <string name="action_list_eventos_card">Listar EventosCard</string>
+    <string name="action_list_eventos_card">Listar Eventos Card</string>
 
     <string name="action_list_notas">Listar Notas</string>
 
@@ -114,5 +116,7 @@
     <string name="textViewDataEvento">Data Evento</string>
 
     <string name="deletar">Deletar</string>
+
+    <string name="versao_app">Versão</string>
 
 </resources>
